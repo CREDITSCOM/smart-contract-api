@@ -1,0 +1,16 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Compiled output ###
+/sc-api/target
+/sc-api-internal/target
+/credits
+
+
+### Build output files
+dependency-reduced-pom.xml
+buildNumber.properties
+*/log/
