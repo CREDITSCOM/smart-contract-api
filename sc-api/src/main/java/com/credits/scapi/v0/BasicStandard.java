@@ -1,5 +1,6 @@
 package com.credits.scapi.v0;
 
+@Deprecated()
 public interface BasicStandard {
     String getName();
 

@@ -1,0 +1,13 @@
+com/credits/scapi/v0/BasicStandard.class
+com/credits/scapi/v0/SmartContract.class
+com/credits/scapi/annotations/ContractAddress.class
+com/credits/scapi/annotations/ContractMethod.class
+com/credits/scapi/v1/SmartContract.class
+com/credits/scapi/v1/ExtensionTokenStandard.class
+com/credits/scapi/annotations/UsingContract.class
+com/credits/scapi/v1/BasicTokenStandard.class
+com/credits/scapi/v0/ExtensionStandard.class
+module-info.class
+com/credits/scapi/v2/SmartContract.class
+com/credits/scapi/annotations/UsingContracts.class
+com/credits/scapi/annotations/Getter.class
