@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 
 public abstract class SmartContractApi implements Serializable {
 
+    private static final long serialVersionUID = 3388422227270554012L;
+
     protected abstract void sendTransaction(String from, String to, double amount, double fee, byte... userData);
 
     protected abstract Object invokeExternalContract(String contractAddress, String method, Object... params);
