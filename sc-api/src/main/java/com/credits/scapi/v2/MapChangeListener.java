@@ -1,8 +1,7 @@
 package com.credits.scapi.v2;
 
-import java.util.Map;
 
-public interface MapChangeListener<K, V> extends Map<K, V> {
+public interface MapChangeListener<K, V> {
 
     void onChanged(EntryChange<? extends K, ? extends V> entryChange);
 
