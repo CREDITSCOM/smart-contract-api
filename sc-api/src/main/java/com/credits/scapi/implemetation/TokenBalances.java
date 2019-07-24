@@ -5,6 +5,7 @@ import com.credits.scapi.v2.ObservableMap;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.BiFunction;
@@ -17,11 +18,10 @@ public class TokenBalances<K, V> extends HashMap<K, V> implements ObservableMap<
     private transient Set<MapChangeListener> listeners;
 
     public TokenBalances() {
-        super();
+        listeners = new HashSet<>();
     }
 
-    public TokenBalances(int initialCapacity, float loadFactor, Set<MapChangeListener> listeners) {
-        super(initialCapacity, loadFactor);
+    public TokenBalances(Set<MapChangeListener> listeners) {
         this.listeners = listeners;
     }
 
@@ -30,7 +30,8 @@ public class TokenBalances<K, V> extends HashMap<K, V> implements ObservableMap<
         this.listeners = listeners;
     }
 
-    public TokenBalances(Set<MapChangeListener> listeners) {
+    public TokenBalances(int initialCapacity, float loadFactor, Set<MapChangeListener> listeners) {
+        super(initialCapacity, loadFactor);
         this.listeners = listeners;
     }
 
