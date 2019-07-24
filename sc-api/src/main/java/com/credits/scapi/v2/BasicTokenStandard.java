@@ -2,6 +2,6 @@ package com.credits.scapi.v2;
 
 public interface BasicTokenStandard extends com.credits.scapi.v1.BasicTokenStandard {
 
-    ObservableMap getTokenBalances();
+    ObservableMap<? extends WalletAddress, ? extends Number> getTokenBalances();
 
 }
