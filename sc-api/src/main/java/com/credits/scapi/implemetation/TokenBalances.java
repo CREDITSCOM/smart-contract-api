@@ -52,14 +52,13 @@ public class TokenBalances<K, V> extends HashMap<K, V> implements ObservableMap<
 
     @Override
     public V put(K key, V value) {
-        final var oldValue = super.get(key);
-        return putThenNotify(key, value, oldValue);
+        return putThenNotify(key, value);
     }
 
-    private V putThenNotify(K key, V value, V oldValue) {
-        final V newValue = super.put(key, value);
-        listeners.forEach(notifyListener(key, oldValue, newValue));
-        return newValue;
+    private V putThenNotify(K key, V value) {
+        final V oldValue = super.put(key, value);
+        listeners.forEach(notifyListener(key, oldValue, value));
+        return oldValue;
     }
 
     @Override
@@ -71,7 +70,7 @@ public class TokenBalances<K, V> extends HashMap<K, V> implements ObservableMap<
         final var oldValue = super.get(key);
 
         return oldValue == null
-               ? putThenNotify(key, value, null)
+               ? putThenNotify(key, value)
                : oldValue;
     }
 
@@ -117,7 +116,7 @@ public class TokenBalances<K, V> extends HashMap<K, V> implements ObservableMap<
         if (function == null) throw new IllegalArgumentException("function can't be null");
 
         forEach((key, value) -> {
-            final var oldValue = super.remove(key);
+            final var oldValue = super.get(key);
             final var newValue = function.apply(key, oldValue);
             replace(key, oldValue, newValue);
         });
@@ -174,7 +173,10 @@ public class TokenBalances<K, V> extends HashMap<K, V> implements ObservableMap<
 
     @Override
     public void clear() {
-        keySet().forEach(this::remove);
+        final var keys = keySet().toArray();
+        for (Object key : keys) {
+            remove(key);
+        }
     }
 
     @SuppressWarnings("unchecked")
