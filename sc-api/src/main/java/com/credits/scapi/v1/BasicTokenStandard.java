@@ -2,7 +2,6 @@ package com.credits.scapi.v1;
 
 import java.math.BigDecimal;
 
-@Deprecated
 public interface BasicTokenStandard {
 
     String getName();
