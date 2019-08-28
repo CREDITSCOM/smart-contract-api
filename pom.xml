@@ -8,7 +8,7 @@
     <groupId>com.credits.sc-api</groupId>
     <artifactId>sc-api-root</artifactId>
     <packaging>pom</packaging>
-    <version>2.1-SNAPSHOT</version>
+    <version>none</version>
 
     <modules>
         <module>sc-api-internal</module>
@@ -16,8 +16,11 @@
     </modules>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <skipTests>false</skipTests>
+        <skipIntegrationTests>true</skipIntegrationTests>
         <javaVersion>11</javaVersion>
-        <buildNumber>0</buildNumber>
     </properties>
 
 </project>
