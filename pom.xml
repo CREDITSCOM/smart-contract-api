@@ -23,4 +23,8 @@
         <javaVersion>11</javaVersion>
     </properties>
 
+    <build>
+        <defaultGoal>install</defaultGoal>
+    </build>
+
 </project>
