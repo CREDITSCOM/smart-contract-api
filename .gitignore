@@ -8,6 +8,7 @@
 /sc-api/target
 /sc-api-internal/target
 /credits
+/target
 
 
 ### Build output files
